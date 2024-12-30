@@ -5,22 +5,44 @@ public class MainComponent {
     public static final int HEIGHT = 600;
     public static final String TITLE = "3D Game Engine";
 
+    private boolean isRunning;
+
     public MainComponent() {
+        isRunning = false;
     }
 
     public void start() {
+        if (isRunning) {
+            return;
+        }
         run();
     }
-    public void stop() {}
-    public void run() {
-        while(!Window.isCloseRequested()) {
+
+    public void stop() {
+        if (!isRunning) {
+            return;
+        }
+        isRunning = false;
+    }
+
+    private void run() {
+        isRunning = true;
+        while(isRunning) {
+            if (Window.isCloseRequested()) {
+                stop();
+            }
             render();
         }
+        cleanup();
     }
-    public void render() {
+
+    private void render() {
         Window.render();
     }
-    public void cleanup() {}
+
+    private void cleanup() {
+        Window.dispose();
+    }
 
     public static void main(String[] args) {
         Window.createWindow(WIDTH, HEIGHT, TITLE);

@@ -21,6 +21,10 @@ public class Window {
         Display.update();
     }
 
+    public static void dispose() {
+        Display.destroy();
+    }
+
     // Getters and Setters
 
     public static boolean isCloseRequested() {
