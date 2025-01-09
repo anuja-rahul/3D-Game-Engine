@@ -7,9 +7,11 @@ public class MainComponent {
     private static final double FRAME_CAP = 5000.0;
 
     private boolean isRunning;
+    private Game game;
 
     public MainComponent() {
         isRunning = false;
+        game = new Game();
     }
 
     public void start() {
@@ -52,7 +54,13 @@ public class MainComponent {
                 if (Window.isCloseRequested()) {
                     stop();
 
-                //TODO: Update the game
+                    //TODO: Update the game
+
+                    Time.setDelta(frameTime);
+                    game.input();
+                    game.update();
+
+
                     if (frameCounter >= Time.SECOND) {
                         System.out.println(frames);
                         frames = 0;
@@ -76,6 +84,7 @@ public class MainComponent {
     }
 
     private void render() {
+        game.render();
         Window.render();
     }
 
