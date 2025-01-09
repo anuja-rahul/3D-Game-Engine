@@ -3,6 +3,7 @@ package com.base.engine;
 public class Time {
 
     private static double delta;
+    public static final long SECOND = 1000000000L;
 
     public static long getTime() {
         return System.nanoTime();
