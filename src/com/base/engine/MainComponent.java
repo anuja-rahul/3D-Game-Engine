@@ -56,7 +56,9 @@ public class MainComponent {
 
                     Time.setDelta(frameTime);
                     Input.update();
+                    System.out.println("\nAbout to run inputs\n");
                     game.input();
+                    System.out.println("\ninputs done\n");
                     game.update();
 
                     if (frameCounter >= Time.SECOND) {
