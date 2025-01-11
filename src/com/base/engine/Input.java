@@ -12,6 +12,7 @@ public class Input {
 
     public static void update() {
 
+
         for (int i = 0; i < NUM_KEYCODES; i++) {
             if (getKey(i) && !currentKeys.contains(i)) {
                 downKeys.add(i);
