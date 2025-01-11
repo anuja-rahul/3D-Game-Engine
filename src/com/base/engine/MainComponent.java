@@ -54,12 +54,10 @@ public class MainComponent {
                 if (Window.isCloseRequested()) {
                     stop();
 
-                    //TODO: Update the game
-
                     Time.setDelta(frameTime);
+                    Input.update();
                     game.input();
                     game.update();
-
 
                     if (frameCounter >= Time.SECOND) {
                         System.out.println(frames);
@@ -67,7 +65,6 @@ public class MainComponent {
                         frameCounter = 0;
                     }
             }
-
             }
             if (render) {
                 render();
