@@ -19,6 +19,14 @@ public class Vector3f {
         return x * v.getX() + y * v.getY() + z * v.getZ();
     }
 
+    public Vector3f cross(Vector3f v) {
+        float x_ = y * v.getZ() -  z * v.getY();
+        float y_ = z * v.getX() -  x * v.getZ();
+        float z_ = x * v.getY() -  y * v.getX();
+
+        return new Vector3f(x_, y_, z_);
+    }
+
     public Vector3f normalize() {
         float len = length();
 
