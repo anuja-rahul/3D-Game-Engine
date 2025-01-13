@@ -10,6 +10,7 @@ public class MainComponent {
     private Game game;
 
     public MainComponent() {
+        RenderUtil.initGraphics();
         isRunning = false;
         game = new Game();
     }
@@ -59,7 +60,7 @@ public class MainComponent {
                 game.update();
 
                 if (frameCounter >= Time.SECOND) {
-                    System.out.println(frames);
+                    System.out.println(frames + " fps");
                     frames = 0;
                     frameCounter = 0;
                 }
@@ -79,6 +80,7 @@ public class MainComponent {
     }
 
     private void render() {
+        RenderUtil.clearScreen();
         game.render();
         Window.render();
     }
