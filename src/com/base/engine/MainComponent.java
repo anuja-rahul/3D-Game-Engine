@@ -51,22 +51,18 @@ public class MainComponent {
                 render = true;
                 unprocessedTime -= frameTime;
 
-                if (Window.isCloseRequested()) {
+                if (Window.isCloseRequested())
                     stop();
 
-                    Time.setDelta(frameTime);
-                    Input.update();
-                    System.out.println("\nAbout to run inputs\n");
-                    game.input();
-                    System.out.println("\ninputs done\n");
-                    game.update();
+                Time.setDelta(frameTime);
+                Input.update();
+                game.update();
 
-                    if (frameCounter >= Time.SECOND) {
-                        System.out.println(frames);
-                        frames = 0;
-                        frameCounter = 0;
-                    }
-            }
+                if (frameCounter >= Time.SECOND) {
+                    System.out.println(frames);
+                    frames = 0;
+                    frameCounter = 0;
+                }
             }
             if (render) {
                 render();
