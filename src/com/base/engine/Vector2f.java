@@ -9,6 +9,60 @@ public class Vector2f {
         this.y = y;
     }
 
+    public float length() {
+        return (float)Math.sqrt(x * x + y * y);
+    }
+
+    public float dot(Vector2f v) {
+        return x * v.getX() + y * v.getY();
+    }
+
+    public Vector2f normalize() {
+        float len = length();
+
+        x /= len;
+        y /= len;
+
+        return this;
+    }
+
+    public Vector2f rotate(float angle) {
+        return null;
+    }
+
+    public Vector2f add(Vector2f v) {
+        return new Vector2f(x + v.getX(), y + v.getY());
+    }
+
+    public Vector2f add(float r) {
+        return new Vector2f(x + r, y + r);
+    }
+
+    public Vector2f sub(Vector2f v) {
+        return new Vector2f(x - v.getX(), y - v.getY());
+    }
+
+    public Vector2f sub(float r) {
+        return new Vector2f(x - r, y - r);
+    }
+
+    public Vector2f mul(Vector2f v) {
+        return new Vector2f(x * v.getX(), y * v.getY());
+    }
+
+    public Vector2f mul(float r) {
+        return new Vector2f(x * r, y * r);
+    }
+
+    public Vector2f div(Vector2f v) {
+        return new Vector2f(x / v.getX(), y / v.getY());
+    }
+
+    public Vector2f div(float r) {
+        return new Vector2f(x / r, y / r);
+    }
+
+
     public String toString() {
         return "(" + x + " " + y + ")";
     }
