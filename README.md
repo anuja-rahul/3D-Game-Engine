@@ -2,8 +2,6 @@
 
 ![Project Status](https://img.shields.io/badge/Project%20Status-Ongoing-red)
 
-[//]: # (![workflow]&#40;https://github.com/anuja-rahul/3D-Game-Engine/actions/workflows/actions.yml/badge.svg&#41;)
-
 ## Overview
 
 This project is a basic 3D game engine built using Java and the Lightweight Java Game Library (LWJGL). The engine provides a foundation for creating 3D games, including window creation, rendering, and basic game loop management.
