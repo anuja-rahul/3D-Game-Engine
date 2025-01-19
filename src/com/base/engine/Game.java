@@ -6,6 +6,7 @@ public class Game {
 
     private Mesh mesh;
     private Shader shader;
+    private Transform transform;
 
     public Game() {
         mesh = new Mesh();
@@ -19,12 +20,14 @@ public class Game {
 
         mesh.addVertices(data);
 
+        transform = new Transform();
+
         shader.addVertexShader(ResourceLoader.loadShader("basicVertex.vs"));
         shader.addFragmentShader(ResourceLoader.loadShader("basicFragment.fs"));
 
         shader.compileShader();
 
-        shader.addUniform("uniformFloat");
+        shader.addUniform("transform");
     }
 
     float temp = 0.0f;
@@ -32,11 +35,13 @@ public class Game {
     public void update() {
         temp += (float) Time.getDelta();
 
-        shader.setUniformf("uniformFloat", (float) Math.sin(temp));
+        transform.setTranslation((float) Math.sin(temp), 0, 0);
+        // shader.setUniformf("transform", (float) Math.abs(Math.sin(temp)));
     }
 
     public void render() {
         shader.bind();
+        shader.setUniform("transform", transform.getTransformation());
         mesh.draw();
     }
 }

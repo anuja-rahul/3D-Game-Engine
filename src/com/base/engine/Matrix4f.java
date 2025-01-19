@@ -16,6 +16,15 @@ public class Matrix4f {
         return this;
     }
 
+    public Matrix4f initTranslation(float x, float y, float z) {
+        matrix[0][0] = 1; matrix[0][1] = 0; matrix[0][2] = 0; matrix[0][3] = x;
+        matrix[1][0] = 0; matrix[1][1] = 1; matrix[1][2] = 0; matrix[1][3] = y;
+        matrix[2][0] = 0; matrix[2][1] = 0; matrix[2][2] = 1; matrix[2][3] = z;
+        matrix[3][0] = 0; matrix[3][1] = 0; matrix[3][2] = 0; matrix[3][3] = 1;
+
+        return this;
+    }
+
     public Matrix4f mul(Matrix4f r) {
         Matrix4f result = new Matrix4f();
 
