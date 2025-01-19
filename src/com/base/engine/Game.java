@@ -22,8 +22,8 @@ public class Game {
 
         transform = new Transform();
 
-        shader.addVertexShader(ResourceLoader.loadShader("basicVertex.vs"));
-        shader.addFragmentShader(ResourceLoader.loadShader("basicFragment.fs"));
+        shader.addVertexShader(ResourceLoader.loadShader("basicVertex.vert"));
+        shader.addFragmentShader(ResourceLoader.loadShader("basicFragment.frag"));
 
         shader.compileShader();
 
