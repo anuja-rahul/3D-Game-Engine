@@ -60,7 +60,8 @@ public class Matrix4f {
 
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
-                r.set(i, j, matrix[i][0] * r.get(0, j) +
+                r.set(i, j,
+                  matrix[i][0] * r.get(0, j) +
                         matrix[i][1] * r.get(1, j) +
                         matrix[i][2] * r.get(2, j) +
                         matrix[i][3] * r.get(3, j));
